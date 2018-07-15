@@ -1,0 +1,17 @@
+<h1>Курсы валют за посление 24 часа</h1>
+
+<%= line_chart rate_show_path('USD', 'RUB', 'sell'), legend: "top", label: "Курс USD к RUB (Продажа)" %>
+
+Среднее за сутки: <%= @avg[%w{USD RUB}][:sell] %>
+
+<%= line_chart rate_show_path('USD', 'RUB', 'buy'), legend: "top", label: "Курс USD к RUB (Покупка)" %>
+
+Среднее за сутки: <%= @avg[%w{USD RUB}][:buy] %>
+
+<%= line_chart rate_show_path('EUR', 'RUB', 'sell'), legend: "top", label: "Курс EUR к RUB (Продажа)" %>
+
+Среднее за сутки: <%= @avg[%w{EUR RUB}][:sell] %>
+
+<%= line_chart rate_show_path('EUR', 'RUB', 'buy'), legend: "top", label: "Курс EUR к RUB (Покупка)" %>
+
+Среднее за сутки: <%= @avg[%w{EUR RUB}][:buy] %>

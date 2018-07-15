@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from: MyText
+  to: MyText
+  buy: 1.5
+  sell: 1.5
+
+two:
+  from: MyText
+  to: MyText
+  buy: 1.5
+  sell: 1.5
