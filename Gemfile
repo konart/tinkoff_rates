@@ -38,8 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'chartkick'
 gem 'crono'
-gem 'groupdate'
-gem "rspec"
+gem 'rspec'
 gem 'rspec-rails'
 
 group :development, :test do
