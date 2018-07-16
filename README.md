@@ -22,3 +22,4 @@ https://github.com/plashchynski/crono
 
 Seeds содержат набор рандомизированных данных за последние 24 часа
 
+Тесты - `rspec`
