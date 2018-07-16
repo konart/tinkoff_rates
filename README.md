@@ -1,24 +1,24 @@
-# README
+# Визуализация курсов валют
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tinkoff API: https://www.tinkoff.ru/api/v1/currency_rates/
 
-Things you may want to cover:
+Для визуализации используется
 
-* Ruby version
+https://www.chartkick.com/
 
-* System dependencies
+В качестве планировщика заданий для ежечасной закачки данных выступает
 
-* Configuration
+https://github.com/plashchynski/crono
 
-* Database creation
+Использование:
 
-* Database initialization
+`bundle exec crono RAILS_ENV=development`
 
-* How to run the test suite
+или как демон:
 
-* Services (job queues, cache servers, search engines, etc.)
+`gem 'daemons'`
 
-* Deployment instructions
+`bundle install; bundle exec crono start RAILS_ENV=development`
 
-* ...
+Seeds содержат набор рандомизированных данных за последние 24 часа
+
