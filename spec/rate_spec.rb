@@ -2,24 +2,19 @@ require 'rspec'
 
 describe Rate, type: :model do
   subject(:rate) { described_class.new }
-  value = 60.9
+  sell = 62.35
+  buy = 60.9
   time = Time.now
   before :each do
-    described_class.create('created_at' => time, 'from' => 'USD', 'to' => 'RUB', 'sell' => value, 'buy' => 62.35)
+    described_class.create('created_at' => time, 'from' => 'USD', 'to' => 'RUB', 'sell' => sell, 'buy' => buy)
   end
 
   it 'should return a hash of time-value pairs' do
-    # prepare data
-    # value = 60.9
-    # time = Time.now
-    # described_class.create('created_at' => time, 'from' => 'USD', 'to' => 'RUB', 'sell' => value, 'buy' => 62.35)
-    expect(rate.get_pair_by_action('USD', 'RUB', :sell)).to eq ({time => value})
+    expect(rate.get_pair_by_action('USD', 'RUB', :sell)).to eq ({time => sell})
+    expect(rate.get_pair_by_action('USD', 'RUB', :buy)).to eq ({time => buy})
   end
 
   it 'should return a hash of pair-average pairs' do
-    # value = 60.9
-    # time = Time.now
-    # described_class.create('created_at' => time, 'from' => 'USD', 'to' => 'RUB', 'sell' => value, 'buy' => 62.35)
-    expect(rate.avg_pairs).to eq ({})
+    expect(rate.avg_pairs).to eq ({%w[USD RUB] => {sell: sell, buy: buy}})
   end
 end
